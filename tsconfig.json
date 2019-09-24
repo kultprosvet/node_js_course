@@ -1,0 +1,12 @@
+{
+  "outDir": "./dist",
+  "build": "./dist",
+  "compilerOptions": {
+    "target": "ES5",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+      "TS_Lesson_1/01_hello.ts"
+  ]
+}
