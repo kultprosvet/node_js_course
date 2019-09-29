@@ -1,0 +1,26 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+  mysql:
+    restart: always
+    image: mysql:8
+    container_name: learning-mysql
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+    working_dir: /application
+    volumes:
+      - ./.mysqldata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=learning
+      - MYSQL_USER=learning
+      - MYSQL_PASSWORD=learning
+    ports:
+      - 3306:3306
+    security_opt:
+      - seccomp:unconfined
+
+
+
+

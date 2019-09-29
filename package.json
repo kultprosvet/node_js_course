@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,9 @@
   },
   "dependencies": {
     "@types/node": "^12.7.5",
-    "reflect-metadata": "^0.1.13"
+    "mysql": "^2.17.1",
+    "reflect-metadata": "^0.1.13",
+    "tsconfig-paths": "^3.9.0",
+    "typeorm": "^0.2.19"
   }
 }
