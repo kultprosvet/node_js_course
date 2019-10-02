@@ -8,7 +8,8 @@
 "synchronize": false,
 "logging": false,
 "entities": [
-  "TypeOrm/Lesson_1/*Entity.ts"
+  "TypeOrm/Lesson_1/*Entity.ts",
+  "TypeOrm/Lesson_2/*Entity.ts"
 ],
 "migrations": [
   "TypeOrm/migrations/*.ts"

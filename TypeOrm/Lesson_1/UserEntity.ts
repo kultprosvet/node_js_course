@@ -2,14 +2,18 @@ import {
     BaseEntity,
     Column,
     Entity,
+    Index,
     PrimaryGeneratedColumn,
 } from 'typeorm'
 
 @Entity('users')
+@Index(['expirience', 'gender'])
+@Index(['lastName', 'firsName', 'bio'], { fulltext: true })
 export class UserEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
     @Column()
+    @Index()
     lastName: string
     @Column()
     firsName: string
