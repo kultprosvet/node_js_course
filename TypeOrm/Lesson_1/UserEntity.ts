@@ -1,10 +1,18 @@
 import {
     BaseEntity,
     Column,
+    CreateDateColumn,
     Entity,
     Index,
+    JoinTable,
+    ManyToMany,
+    OneToMany,
     PrimaryGeneratedColumn,
+    UpdateDateColumn,
+    VersionColumn,
 } from 'typeorm'
+import { DeceaseEntity } from '../Lesson_2/DeceaseEntity'
+import { GroupEntity } from '../Lesson_3/GroupEntity'
 
 @Entity('users')
 @Index(['expirience', 'gender'])
@@ -19,7 +27,7 @@ export class UserEntity extends BaseEntity {
     firsName: string
     @Column({ type: 'date' })
     birthDay: Date
-    @Column()
+    @Column({ default: true })
     isActive: boolean
     @Column({ type: 'text', nullable: true })
     bio: string
@@ -27,4 +35,19 @@ export class UserEntity extends BaseEntity {
     expirience: number
     @Column({ type: 'enum', enum: ['male', 'female'] })
     gender: string
+
+    @OneToMany(type => DeceaseEntity, d => d.user, {
+        cascade: ['insert', 'update'],
+    })
+    deceases: DeceaseEntity[]
+
+    @ManyToMany(type => GroupEntity, group => group.users)
+    groups: GroupEntity[]
+
+    @CreateDateColumn()
+    createdAt: Date
+    @UpdateDateColumn()
+    updatedAt: Date
+    @VersionColumn()
+    version: number
 }

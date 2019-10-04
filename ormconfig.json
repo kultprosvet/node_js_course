@@ -1,20 +1,24 @@
 {
-"type": "mysql",
-"host": "localhost",
-"port": 3306,
-"username": "learning",
-"password": "learning",
-"database": "learning",
-"synchronize": false,
-"logging": false,
-"entities": [
-  "TypeOrm/Lesson_1/*Entity.ts",
-  "TypeOrm/Lesson_2/*Entity.ts"
-],
-"migrations": [
-  "TypeOrm/migrations/*.ts"
-],
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "learning",
+  "password": "learning",
+  "database": "learning",
+  "synchronize": false,
+  "entities": [
+    "TypeOrm/Lesson_1/*Entity.ts",
+    "TypeOrm/Lesson_2/*Entity.ts",
+    "TypeOrm/Lesson_3/*Entity.ts"
+  ],
+  "migrations": [
+    "TypeOrm/migrations/*.ts"
+  ],
   "cli": {
     "migrationsDir": "TypeOrm/migrations"
-  }
+  },
+  "logging": [
+    "query",
+    "error"
+  ]
 }

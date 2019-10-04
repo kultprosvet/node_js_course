@@ -14,7 +14,7 @@ export class DeceaseEntity extends BaseEntity {
     @Column()
     name: string
 
-    @ManyToOne(type => UserEntity)
+    @ManyToOne(type => UserEntity, { onDelete: 'CASCADE' })
     @JoinColumn()
     user: UserEntity
     @Column({ type: 'int', nullable: true })
