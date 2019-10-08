@@ -9,7 +9,8 @@
   "entities": [
     "TypeOrm/Lesson_1/*Entity.ts",
     "TypeOrm/Lesson_2/*Entity.ts",
-    "TypeOrm/Lesson_3/*Entity.ts"
+   "TypeOrm/Lesson_3/*Entity.ts",
+    "TypeOrm/Lesson_4/*Entity.ts"
   ],
   "migrations": [
     "TypeOrm/migrations/*.ts"

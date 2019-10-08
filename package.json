@@ -5,27 +5,32 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "start-docker": "docker stop $(docker ps -a -q) && docker-compose up",
+    "start:dev": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_1/hello.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.1",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
+    "ts-node-dev": "^1.0.0-pre.43",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
     "@types/faker": "^4.1.5",
     "@types/node": "^12.7.5",
+    "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.17.1",
     "reflect-metadata": "^0.1.13",
     "tsconfig-paths": "^3.9.0",
-    "typeorm": "^0.2.19"
+    "typeorm": "0.2.19"
   }
 }
