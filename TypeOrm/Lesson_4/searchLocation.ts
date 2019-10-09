@@ -28,11 +28,11 @@ async function runQuery() {
 
     //prettier-ignore
     const polygon = `POLYGON((
-      ${longitude - deltaLon} ${latitude - deltaLat},
-      ${longitude - deltaLon} ${latitude + deltaLat},
-      ${longitude + deltaLon} ${latitude + deltaLat},
-      ${longitude + deltaLon} ${latitude - deltaLat},
-      ${longitude - deltaLon} ${latitude - deltaLat} 
+      ${latitude - deltaLat} ${longitude - deltaLon},
+      ${latitude + deltaLat} ${longitude - deltaLon} ,
+      ${latitude + deltaLat} ${longitude + deltaLon} ,
+      ${latitude - deltaLat} ${longitude + deltaLon} ,
+      ${latitude - deltaLat} ${longitude - deltaLon}  
     ))`
 
     let res = await createQueryBuilder(PointEntity)

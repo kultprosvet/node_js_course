@@ -1,21 +1,25 @@
 //@ts-ignore
 import * as express from 'express'
+import { Request, Response } from 'express'
 const app = express()
 
-app.get(/book.*/, (req: any, res: any) => {
+app.get(/book.*/, (req: Request, res: Response) => {
     res.send('Book')
 })
 
-app.get('/', (req: any, res: any) => {
+app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!')
 })
-app.post('/form', (req: any, res: any) => {
+app.post('/form', (req: Request, res: Response) => {
     res.json({ message: 'Form subitted' })
 })
-app.delete('/user/:userId', (req: any, res: any) => {
-    res.send('User deleted' + req.params.userId)
-})
-app.patch('/user', (req: any, res: any) => {
+app.delete(
+    '/user/:userId',
+    (req: Request, res: Response) => {
+        res.send('User deleted' + req.params.userId)
+    },
+)
+app.patch('/user', (req: Request, res: Response) => {
     res.send('User updated')
 })
 
