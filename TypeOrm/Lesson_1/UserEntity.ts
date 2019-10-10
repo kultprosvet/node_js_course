@@ -20,20 +20,32 @@ import { GroupEntity } from '../Lesson_3/GroupEntity'
 export class UserEntity extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
+
+    @Column()
+    @Index()
+    username: string
+
+    @Column()
+    password: string
+
     @Column()
     @Index()
     lastName: string
     @Column()
     firsName: string
-    @Column({ type: 'date' })
+    @Column({ type: 'date', nullable: true })
     birthDay: Date
     @Column({ default: true })
     isActive: boolean
     @Column({ type: 'text', nullable: true })
     bio: string
-    @Column({ type: 'int' })
+    @Column({ type: 'int', nullable: true })
     expirience: number
-    @Column({ type: 'enum', enum: ['male', 'female'] })
+    @Column({
+        type: 'enum',
+        enum: ['male', 'female'],
+        nullable: true,
+    })
     gender: string
 
     @OneToMany(type => DeceaseEntity, d => d.user, {

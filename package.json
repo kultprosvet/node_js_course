@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "start-docker": "docker stop $(docker ps -a -q) && docker-compose up",
-    "start:dev": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_1/hello.ts"
+    "start:exp-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_1/hello.ts",
+    "start:exp-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_2/server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -24,10 +25,14 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/faker": "^4.1.5",
     "@types/node": "^12.7.5",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
     "reflect-metadata": "^0.1.13",
     "tsconfig-paths": "^3.9.0",
