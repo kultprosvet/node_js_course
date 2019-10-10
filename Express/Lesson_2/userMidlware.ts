@@ -18,7 +18,7 @@ export function userMidleware(protectedMethods: string[]) {
             token = token.slice(7, token.length)
             if (jwt.verify(token, SECRET)) {
                 const data = jwt.decode(token)
-                const user = await UserEntity.find({
+                const user = await UserEntity.findOne({
                     select: ['id', 'username'],
                     where: { id: data.data.id },
                 })
