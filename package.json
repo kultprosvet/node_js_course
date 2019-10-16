@@ -8,7 +8,9 @@
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "start-docker": "docker stop $(docker ps -a -q) && docker-compose up",
     "start:exp-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_1/hello.ts",
-    "start:exp-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_2/server.ts"
+    "start:exp-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_2/server.ts",
+    "start:gql-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/server.ts",
+    "start:gql-lesson1.2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/serverTypeGQL.ts"
   },
   "author": "",
   "license": "ISC",
@@ -27,15 +29,19 @@
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/faker": "^4.1.5",
+    "@types/graphql": "^14.5.0",
     "@types/node": "^12.7.5",
+    "apollo-server": "^2.9.6",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "graphql": "^14.5.8",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
     "reflect-metadata": "^0.1.13",
     "tsconfig-paths": "^3.9.0",
+    "type-graphql": "^0.17.5",
     "typeorm": "0.2.19"
   }
 }
