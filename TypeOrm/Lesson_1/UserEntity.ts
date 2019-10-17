@@ -62,4 +62,6 @@ export class UserEntity extends BaseEntity {
     updatedAt: Date
     @VersionColumn()
     version: number
+
+    token: string
 }
