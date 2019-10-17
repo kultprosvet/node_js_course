@@ -16,8 +16,8 @@ export class BookResolver {
         return books
     }
     @FieldResolver(type => AuthorGQL)
-    author(@Root() book: BookGQL) {
+    author(@Root() book: any) {
         console.log(book)
-        return { lastName: '11', firstName: '11' }
+        return authors[book.author]
     }
 }

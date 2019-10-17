@@ -10,7 +10,8 @@
     "start:exp-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_1/hello.ts",
     "start:exp-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_2/server.ts",
     "start:gql-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/server.ts",
-    "start:gql-lesson1.2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/serverTypeGQL.ts"
+    "start:gql-lesson1.2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/serverTypeGQL.ts",
+    "start:gql-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_2/serverTypeGQL.ts"
   },
   "author": "",
   "license": "ISC",
