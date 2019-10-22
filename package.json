@@ -11,7 +11,8 @@
     "start:exp-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 Express/Lesson_2/server.ts",
     "start:gql-lesson1": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/server.ts",
     "start:gql-lesson1.2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_1/serverTypeGQL.ts",
-    "start:gql-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_2/serverTypeGQL.ts"
+    "start:gql-lesson2": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0 TypeGraphQL/Lesson_2/serverTypeGQL.ts",
+    "start:gql-lesson3": "ts-node-dev --respawn --transpileOnly --inspect=0.0.0.0  TypeGraphQL/Lesson_3/serverTypeGQL.ts"
   },
   "author": "",
   "license": "ISC",
@@ -35,9 +36,12 @@
     "apollo-server": "^2.9.6",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "bull": "^3.11.0",
+    "dataloader": "^1.4.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "graphql": "^14.5.8",
+    "graphql-subscriptions": "^1.1.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
     "reflect-metadata": "^0.1.13",
