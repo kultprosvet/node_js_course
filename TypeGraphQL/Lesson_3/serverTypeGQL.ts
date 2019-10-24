@@ -24,9 +24,11 @@ async function startServer() {
         cors: true,
         context: (session: any) => {
             let token
+            // client connected via web socket
             if (session.connection) {
                 token =
                     session.connection.context.Authorization
+                // client connected via http
             } else if (session.req) {
                 token = session.req.headers.authorization
             }
