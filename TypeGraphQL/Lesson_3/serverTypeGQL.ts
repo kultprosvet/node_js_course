@@ -21,10 +21,16 @@ async function startServer() {
     const server = new ApolloServer({
         schema,
         playground: true,
+        cors: true,
         context: (session: any) => {
+            let token
+            if (session.connection) {
+                token =
+                    session.connection.context.Authorization
+            } else if (session.req) {
+                token = session.req.headers.authorization
+            }
             let user = null
-            if (!session.req) return {}
-            let token = session.req.headers.authorization
             if (token) {
                 token = token.slice(7, token.length)
                 if (jwt.verify(token, SECRET)) {
@@ -34,9 +40,20 @@ async function startServer() {
             }
             return { user, session }
         },
+        subscriptions: {
+            onConnect: (connectionParams, socket) => {
+                return connectionParams
+            },
+            onDisconnect: () => {
+                console.log('Disconnected.')
+            },
+        },
     })
-    server.listen().then(({ url }) => {
-        console.log(`🚀  Server ready at ${url}`)
+    server.listen().then(({ url, subscriptionsUrl }) => {
+        console.log(`🚀 Server ready at ${url}`)
+        console.log(
+            `🚀 Subscriptions ready at ${subscriptionsUrl}`,
+        )
     })
 }
 startServer().catch(e => {
